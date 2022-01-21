@@ -10,7 +10,7 @@ User can input particular keywords such as person name, company name or specific
 Finally dashboards, pie charts, bar graphs and scatter plots graphs are generated for showing insights to the user
 
 Project Team:
-Sarang Patil
-Mayura Rane
-Aishwarya Gaikwad
+Sarang Patil,
+Mayura Rane,
+Aishwarya Gaikwad,
 Mrunmayee Patil
