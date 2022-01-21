@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <meta charset="UTF-8">
+        <link href="{{ url_for('static',filename='hellopage.css') }}" rel="stylesheet">
+    <title>Index</title>
+</head>
+<body>
+<form class="login">
+    <h1>Select from following options</h1>
+    <button formmethod="post" font="Arial Black" type="submit" value="value2" class="button" onclick="$('#loading').show();">Global search</button>
+    <br>
+   <button font="Arial Black" type="submit" value="value1" class="button" onclick="javascript: form.action='/individual';">Individual search</button><br>
+ </form>
+<br>
+<div id="loading" style="display:none;" align="center"><img src="/static/images/loading.gif" height="2%" width="9%" alt="" /></div>
+</body>
+
+</html>
+

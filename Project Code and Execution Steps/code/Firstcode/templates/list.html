@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <link href="{{ url_for('static',filename='listpage.css', _external=True) }}" rel="stylesheet">
+    <title>Index</title>
+    <base href="http://127.0.0.1:5000/">
+    </head>
+  <body>
+    <div class='title'>
+      <h1>Troll Tweets List</h1>
+    </div>
+      <div class='imgdisp'>
+      <form action="{{ url_for('list') }}" method="post">
+          <h3>Analysis of tweets</h3>
+          <img src="/static/images/img1.png" width="45%" >
+          <img src="/static/images/img2.png" width="50%"  >
+          <img src="/static/images/img3.png" width="50%"  >
+      </form>
+      </div>
+    <div class='login'>
+      <form action="{{ url_for('list') }}" method="post">
+      <h1>Twitter Trends</h1>
+      <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Trend</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in output %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+      </form>
+    </div>
+    <div class='login'>
+      <form method="get">
+      <h3>Twitter Data</h3>
+      <table>
+        <thead>
+        <tr>
+            <th></th>
+            <th>ID</th>
+            <th>Time</th>
+            <th>Username</th>
+            <th>Tweet</th>
+            <th>Label</th>
+            <th>Report Tweet</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in output_data %}
+                <td>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[3]}}</td>
+                    <td>{{row[4]}}</td>
+            <td><form action="{{ url_for('report_this', id=row[6]) }}"><button id="{{row[0]}}" name=Report method="get" type="submit" >Report Tweet</button></form></td>
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+      </table>
+      </form>
+    </div>
+    <div align="center">
+  <form action="{{ url_for('download') }}" method="post">
+    <button id="cmd" type="submit" method="post" value="Download">Download Report</button>
+  </form>
+    </div>
+  </body>
+</html>

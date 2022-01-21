@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+  <head>
+    <title>Register page</title>
+    <link href="{{ url_for('static', filename='loginpage.css') }}" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="login">
+      <h1>Please register</h1>
+      <br>
+      <form action="{{ url_for('register') }}" method="post">
+        <input type="text" placeholder="Username" name="username" value="{{ request.form.username }}">
+         <input type="password" placeholder="Password" name="password" value="{{ request.form.password }}">
+        <br>
+        <input class="button" type="submit" value="Register">
+      </form>
+      {% if error %}
+        <p><strong>Error:</strong> {{ error }}</p>
+      {% endif %}
+    </div>
+  </body>
+</html>

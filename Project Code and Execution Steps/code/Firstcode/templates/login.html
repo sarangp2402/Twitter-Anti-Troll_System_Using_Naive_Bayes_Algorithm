@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+  <head>
+    <title>Login page</title>
+    <link href="{{ url_for('static', filename='loginpage.css') }}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="login">
+      <h1>Please login</h1>
+      <form action="{{ url_for('login') }}" method="post">
+        <input type="text" placeholder="Username" name="username" value="{{ request.form.username }}">
+         <input type="password" placeholder="Password" name="password" value="{{ request.form.password }}">
+          <p class="register"> <label>Don't have an account?</label> <button class="btn btn-primary" type="submit" value="value3" onclick="javascript: form.action='/register';">Register here</button></p>
+        <input class="button" type="submit" value="Login">
+      </form>
+      {% if error %}
+        <p><strong>Error:</strong> {{ error }}</p>
+      {% endif %}
+    </div>
+  </body>
+</html>

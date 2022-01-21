@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <link href="{{ url_for('static',filename='loginpage.css') }}" rel="stylesheet">
+    <title>Keyword Search</title>
+</head>
+<body>
+<div class="login">
+  <h1>Search for a keyword</h1>
+  <form method="post" action="{{ url_for('individual') }}">
+      <input type="text" placeholder="Keyword" name="keyword" value="{{ request.form.keyword }}">
+      <button class="button" type="submit" value="Search" onclick="$('#loading').show();">Search</button>
+      <!--onclick="javascript: form.action='/list';">-->
+  </form></div>
+<br>
+<div id="loading" style="display:none;" align="center"><img src="/static/images/loading.gif" height="2%" width="9%" alt="" /></div>
+</body>
+</html>
