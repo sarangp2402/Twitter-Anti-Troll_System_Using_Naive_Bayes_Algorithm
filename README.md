@@ -1,7 +1,7 @@
 # Anti-Troll_System_Using_Naive_Bayes_Algorithm
 Refer to "Anti-Troll_System_Using_Naive_Bayes_Algorithm/Project Code and Execution Steps/code/Firstcode/app.py" for the code
 
-The project consists of three modules logic/registration, generic search and keyword search.
+The project consists of three modules login/registration, generic search and keyword search.
 The first module is login/registration, in which you can either log in or register in our system database.
 After that user can access two options: generic search and individual search.
 Live tweets are fetched and evaluated using the naive bayes model trained dataset.
